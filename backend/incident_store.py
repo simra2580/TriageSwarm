@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
-from .models import IncidentMatch
+from models import IncidentMatch
 
 
 @dataclass(frozen=True)
