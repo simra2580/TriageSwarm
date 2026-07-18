@@ -7,8 +7,8 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Any
 
-from .incident_store import IncidentStore, _tokenize
-from .models import AgentResult, DiagnoseRequest, IncidentMatch
+from incident_store import IncidentStore, _tokenize
+from models import AgentResult, DiagnoseRequest, IncidentMatch
 
 
 @dataclass(frozen=True)

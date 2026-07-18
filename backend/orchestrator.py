@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any, AsyncIterator
 
-from .agents import (
+from agents import (
     HistorianAgent,
     HypothesisAgent,
     LogAnalyzerAgent,
@@ -11,8 +11,8 @@ from .agents import (
     SkepticAgent,
     to_agent_result,
 )
-from .incident_store import IncidentStore
-from .models import DiagnoseRequest, DiagnosisResponse
+from incident_store import IncidentStore
+from models import DiagnoseRequest, DiagnosisResponse
 
 
 class DiagnosisOrchestrator:
