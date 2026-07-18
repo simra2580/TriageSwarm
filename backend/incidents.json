@@ -1,0 +1,38 @@
+[
+  {
+    "id": "INC-0142",
+    "title": "Checkout 500s after deploy",
+    "date": "2026-06-21",
+    "service": "checkout",
+    "summary": "Spike caused by auth token rotation timing out under load.",
+    "details": "Requests piled up after a deploy changed refresh timing, which caused token expiry and a retry storm.",
+    "tags": ["payments", "auth", "retry", "deploy"]
+  },
+  {
+    "id": "INC-0188",
+    "title": "Webhook fanout failure",
+    "date": "2026-05-09",
+    "service": "webhooks",
+    "summary": "Downstream retries amplified a stale credential refresh bug.",
+    "details": "A stale refresh token and an aggressive retry loop created a burst of duplicate deliveries.",
+    "tags": ["webhooks", "cache", "retries", "credentials"]
+  },
+  {
+    "id": "INC-0204",
+    "title": "Session invalidation loop",
+    "date": "2026-03-17",
+    "service": "auth",
+    "summary": "Repeated login failures traced to a missing backoff guard.",
+    "details": "Login attempts retried immediately after invalidation, which kept creating fresh failures instead of recovering.",
+    "tags": ["sessions", "backoff", "stability", "auth"]
+  },
+  {
+    "id": "INC-0211",
+    "title": "API rate limit cascade",
+    "date": "2026-02-04",
+    "service": "api-gateway",
+    "summary": "A burst of upstream retries exhausted the shared rate limit pool.",
+    "details": "One noisy caller saturated the limiter, causing unrelated requests to fail until the window reset.",
+    "tags": ["rate-limit", "retries", "gateway", "burst"]
+  }
+]
