@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
-from .models import DiagnoseRequest
+from models import DiagnoseRequest
 from orchestrator import DiagnosisOrchestrator, format_sse
 
 app = FastAPI(title="TriageSwarm Backend", version="1.0.0")
